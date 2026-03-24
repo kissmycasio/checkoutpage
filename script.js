@@ -1,6 +1,9 @@
 const params = new URLSearchParams(window.location.search);
 const productsParam = params.get("products");
 
+const itemsDiv = document.getElementById("items");
+const checkoutBtn = document.getElementById("checkoutBtn");
+
 fetch("products.json")
   .then(res => res.json())
   .then(productMap => {
@@ -8,20 +11,27 @@ fetch("products.json")
     let redirectUrl = productMap["default"];
 
     if (productsParam) {
-      const firstProduct = productsParam.split(",")[0];
-      const productId = firstProduct.split(":")[0];
+      const entries = productsParam.split(",");
 
-      if (productMap[productId]) {
-        redirectUrl = productMap[productId];
-      }
+      entries.forEach(entry => {
+        const [id, qty] = entry.split(":");
+        const quantity = parseInt(qty) || 1;
+
+        const div = document.createElement("div");
+        div.className = "item";
+        div.textContent = `${id} (Qty: ${quantity})`;
+        itemsDiv.appendChild(div);
+
+        // Use first valid product as checkout link
+        if (productMap[id] && redirectUrl === productMap["default"]) {
+          redirectUrl = productMap[id];
+        }
+      });
     }
 
-    // slight delay so loading screen is visible (~700ms)
-    setTimeout(() => {
-      window.location.href = redirectUrl;
-    }, 700);
+    checkoutBtn.href = redirectUrl;
 
   })
   .catch(() => {
-    window.location.href = "/";
+    checkoutBtn.href = "/";
   });
