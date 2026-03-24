@@ -8,7 +8,7 @@ fetch("products.json")
   .then(res => res.json())
   .then(productMap => {
 
-    let redirectUrl = productMap["default"];
+    let redirectUrl = productMap["default"].url;
 
     if (productsParam) {
       const entries = productsParam.split(",");
@@ -17,14 +17,23 @@ fetch("products.json")
         const [id, qty] = entry.split(":");
         const quantity = parseInt(qty) || 1;
 
-        const div = document.createElement("div");
-        div.className = "item";
-        div.textContent = `${id} (Qty: ${quantity})`;
-        itemsDiv.appendChild(div);
+        const product = productMap[id];
 
-        // Use first valid product as checkout link
-        if (productMap[id] && redirectUrl === productMap["default"]) {
-          redirectUrl = productMap[id];
+        if (product) {
+          const div = document.createElement("div");
+          div.className = "item";
+
+          div.innerHTML = `
+            <img src="${product.image}">
+            ${product.name} (Qty: ${quantity})
+          `;
+
+          itemsDiv.appendChild(div);
+
+          // First valid product becomes checkout link
+          if (redirectUrl === productMap["default"].url) {
+            redirectUrl = product.url;
+          }
         }
       });
     }
