@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TC9H5LRQC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4TC9H5LRQC');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #555;
+      color: #ddd;
+      text-align: center;
+    }
+
+    .overlay {
+      padding: 80px 20px;
+    }
+
+    h1 {
+      color: #000;
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    .message {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 20px;
+    }
+
+    .items {
+      margin-top: 30px;
+    }
+
+    .item {
+      margin: 20px 0;
+    }
+
+    .item img {
+      width: 80px;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    .buttons {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .link {
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .link:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    .cta {
+      background-color: #2d3cff;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 4px 4px 0px black;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ddd;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="overlay">
+    <h1>One More Step...</h1>
+
+    <div class="message">
+      <p>Continue to the Kissmycasio Etsy Shop to check out securely.</p>
+      <p>Items you've selected may need to be added to your Etsy cart again.</p>
+      <p>To show our appreciation for your understanding,</p>
+      <p>we're applying a 15% discount to your order.</p>
+      <p>Thank you for shopping with Kissmycasio!</p>
+    </div>
+
+    <!-- PRODUCT DISPLAY -->
+    <div id="items" class="items"></div>
+
+    <!-- BUTTONS -->
+    <div class="buttons">
+      <a href="https://www.facebook.com/share/1DUFqQR7tg/" class="link">
+        Back to Facebook
+      </a>
+
+      <a id="checkoutBtn" class="cta" href="#">
+        Continue To Etsy
+      </a>
+
+      <a href="https://m.me/991467170725193" class="link">
+        Ask a question?
+      </a>
+    </div>
+
+    <!-- OPTIONAL BADGE (delete if you don't want it) -->
+    <div class="badge">
+      🔒 Secure checkout powered by Etsy
+    </div>
+
+  </div>
+</body>
+</html>
