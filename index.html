@@ -1,140 +1,57 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta name="facebook-domain-verification" content="dgxgg3d6r5b51a1i8mvksfb43i7g6i" />
-  <meta charset="UTF-8">
-  <title>Checkout</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TC9H5LRQC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4TC9H5LRQC');
-  </script>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c2024">
+  <meta name="description" content="KMCMODZ has moved to kmcmodz.com. Visit our new home for updates on our upcoming website.">
+  <title>KMCMODZ — We Are Moving</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #555;
-      color: #ddd;
-      text-align: center;
-    }
-
-    .overlay {
-      padding: 80px 20px;
-    }
-
-    h1 {
-      color: #000;
-      font-size: 42px;
-      margin-bottom: 40px;
-    }
-
-    .message {
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-size: 20px;
-    }
-
-    .items {
-      margin-top: 30px;
-    }
-
-    .item {
-      margin: 20px 0;
-    }
-
-    .item img {
-      width: 80px;
-      border-radius: 6px;
-      display: block;
-      margin: 0 auto 8px;
-    }
-
-    .buttons {
-      margin-top: 60px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .link {
-      color: #000;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 16px;
-      border-radius: 6px;
-    }
-
-    .link:hover {
-      background-color: rgba(0,0,0,0.1);
-    }
-
-    .cta {
-      background-color: #2d3cff;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      box-shadow: 4px 4px 0px black;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-    }
-
-    .badge {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #ddd;
-    }
+    :root{color-scheme:dark;--bg:#1c2024;--panel:#262c31;--text:#e9edf0;--muted:#a8b2ba;--rule:#424b53}
+    *{box-sizing:border-box}
+    html{min-height:100%}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse 75% 70% at 83% 45%,#30373c 0%,#24292d 43%,var(--bg) 100%);color:var(--text);font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column}
+    .shell{width:min(1200px,calc(100% - 64px));margin:auto;display:flex;flex-direction:column;min-height:100vh}
+    header{padding:43px 0 25px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .wordmark{font-family:Michroma,Orbitron,Arial,sans-serif;letter-spacing:.055em;font-size:clamp(17px,2vw,23px);font-weight:400;text-decoration:none;color:var(--text)}
+    .header-note,.eyebrow,.footer-note{font-family:Orbitron,monospace;letter-spacing:.18em;font-size:10px;color:#95a1ab}
+    main{flex:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);align-items:center;gap:8vw;padding:75px 0 100px}
+    .eyebrow{margin:0 0 32px;color:#b7c1c9}
+    h1{font-family:Michroma,Orbitron,Arial,sans-serif;font-size:clamp(27px,4vw,53px);line-height:1.5;letter-spacing:.015em;font-weight:400;margin:0 0 27px;max-width:730px}
+    .lead{font-size:clamp(16px,1.5vw,19px);line-height:1.95;color:#b8c2c9;max-width:600px;margin:0}
+    .destination{color:var(--text);text-decoration:underline;text-underline-offset:4px}
+    .destination:hover,.destination:focus-visible{color:#fff}
+    .status{margin-top:51px;padding-top:17px;border-top:1px solid var(--rule);font:11px Orbitron,monospace;letter-spacing:.15em;color:#9daab3;display:flex;align-items:center;gap:12px}
+    .pulse{width:7px;height:7px;background:#b7c5cc;border-radius:50%;box-shadow:0 0 13px #b7c5cc55;flex:none}
+    .art{min-height:370px;position:relative;display:grid;place-items:center;opacity:.88}
+    .art::before{content:"";width:min(95%,430px);aspect-ratio:1;border:1px solid #6c788333;border-radius:50%;box-shadow:0 0 0 40px #c8d3da07,0 0 0 85px #c8d3da04;position:absolute}
+    .art::after{content:"";position:absolute;width:min(72%,325px);aspect-ratio:1;border:1px dashed #8d9da966;border-radius:50%;transform:rotate(20deg)}
+    .cross{width:160px;height:160px;position:relative;display:grid;place-items:center}
+    .cross::before,.cross::after{content:"";position:absolute;background:#87949d80}
+    .cross::before{height:1px;width:100%}.cross::after{width:1px;height:100%}
+    .center{width:45px;height:45px;border:1px solid #b5c1c999;border-radius:50%;box-shadow:0 0 0 13px #d5e1e608;background:#2b333899}
+    .art-label{position:absolute;bottom:0;right:3px;color:#9ca9b2;font:10px Orbitron,monospace;letter-spacing:.15em}
+    footer{border-top:1px solid var(--rule);padding:24px 0 33px;display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:760px){.shell{width:min(100% - 38px,600px)}header{padding-top:28px}.header-note{display:none}main{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px;padding:70px 0 55px}h1{font-size:clamp(25px,7vw,38px)}.art{min-height:190px;order:-1;opacity:.6}.art::before{width:150px}.art::after{width:105px}.cross{width:80px;height:80px}.center{width:25px;height:25px}.art-label{display:none}.status{margin-top:35px}footer{padding-bottom:25px}}
+    @media(prefers-reduced-motion:no-preference){.pulse{animation:glow 3s ease-in-out infinite}@keyframes glow{50%{opacity:.42;box-shadow:0 0 4px #b7c5cc22}}}
   </style>
-
-  <script src="script.js" defer></script>
 </head>
-
 <body>
-  <div class="overlay">
-    <h1>One More Step...</h1>
-
-    <div class="message">
-      <p>Continue to the Kissmycasio Etsy Shop to check out securely.</p>
-      <p>Items you've selected may need to be added to your Etsy cart again.</p>
-      <p>To show our appreciation for your understanding,</p>
-      <p>we're applying a 15% discount to your order.</p>
-      <p>Thank you for shopping with Kissmycasio!</p>
-    </div>
-
-    <!-- PRODUCT DISPLAY -->
-    <div id="items" class="items"></div>
-
-    <!-- BUTTONS -->
-    <div class="buttons">
-      <a href="https://www.facebook.com/share/1DUFqQR7tg/" class="link">
-        Back to Facebook
-      </a>
-
-      <a id="checkoutBtn" class="cta" href="#">
-        Continue To Etsy
-      </a>
-
-      <a href="https://m.me/991467170725193" class="link">
-        Ask a question?
-      </a>
-    </div>
-
-    <!-- OPTIONAL BADGE (delete if you don't want it) -->
-    <div class="badge">
-      🔒 Secure checkout powered by Etsy
-    </div>
-
+  <div class="shell">
+    <header><div class="wordmark">KMCMODZ</div><div class="header-note">INDEPENDENT WATCH MODIFICATIONS</div></header>
+    <main>
+      <section aria-labelledby="headline">
+        <p class="eyebrow">// SITE STATUS: RELOCATING</p>
+        <h1 id="headline">KMCMODZ<br>IS MOVING.</h1>
+        <p class="lead">We’re moving to <a href="https://kmcmodz.com" class="destination">KMCMODZ.COM</a>.<br><br>Please update your bookmarks. We look forward to seeing you there soon!</p>
+        <div class="status"><span class="pulse" aria-hidden="true"></span> VISIT OUR NEW HOME</div>
+      </section>
+      <div class="art" aria-hidden="true"><div class="cross"><div class="center"></div></div><div class="art-label">KMCMODZ / 001</div></div>
+    </main>
+    <footer><span class="footer-note">KMCMODZ © 2026</span><span class="footer-note">MADE TO BE WORN. DESIGNED TO BE DIFFERENT.</span></footer>
   </div>
 </body>
 </html>
